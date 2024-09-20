@@ -1,0 +1,26 @@
+.title {
+	text-align: center;
+  	color: red;
+}
+
+.side_boxes {
+	display: flex;
+}
+
+.side_boxes[data-flex-wrap] {
+	flex-wrap: wrap;
+}
+
+.side_boxes[data-space] {
+	justify-content: space-between;
+}
+
+.side_boxes[data-align-center] {
+	align-items: center;
+}
+
+/* Presentation styles */
+.side_boxes > * {
+  max-width: 280px;
+}
+

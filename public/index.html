@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="UTF-8">
+	<title>Il meteo tra i due mondi</title>
+	<script src="index.js" type="module"> 
+	</script>
+</head>
+
+<body>
+<h1>Stazione Introd – Les Villes Dessous – 800 m s.l.m.</h1>
+
+<h2>Ultima rilevazione</h2>
+<table>
+	<tr>
+		<td><b>Data</b></td>
+		<td id="data_ultima_rilevazione"> ... </td> 
+	</tr>
+	<tr>
+		<td><b>Temperatura</b></td>
+		<td id="temperatura_corrente"> ... </td> 
+	</tr>
+	<tr>
+		<td><b>Pressione</b></td>
+		<td id="pressione_corrente"> ... </td> 
+	</tr>
+	<tr>
+		<td><b>Umidità relativa</b></td>
+		<td id="umidità_corrente"> ... </td> 
+	</tr>
+</table>
+
+
+<h2>Temperatura</h2>
+<h4>Valori estremi</h4>
+<table>
+	<tr>
+		<th></th>
+		<th> Minima </th> 
+		<th> Massima </th> 
+	</tr>
+	<tr>
+		<td><b>Oggi</b></td> 
+		<td id="min_temperature_today"> ... </td> 
+		<td id="max_temperature_today"> ... </td> 
+	</tr>
+	<tr>
+		<td><b>Ieri</b></td> 
+		<td id="min_temperature_yesterday"> ... </td> 
+		<td id="max_temperature_yesterday"> ... </td> 
+	</tr>
+	<tr>
+		<td><b>Mese corrente</b></td> 
+		<td id="min_temperature_this_month"> ... </td> 
+		<td id="max_temperature_this_month"> ... </td> 
+	</tr>
+    <tr>
+		<td><b>Mese passato</b></td> 
+		<td id="min_temperature_last_month"> ... </td> 
+		<td id="max_temperature_last_month"> ... </td> 
+	</tr>
+</table>
+
+<h4>Andamento ultimi venti giorni</h4>
+<img src="plots/temperature_last_period.png" style="width:800px;">
+
+
+<h2>Umidità relativa</h2>
+<h4>Valori estremi</h4>
+<table>
+	<tr>
+		<th></th>
+		<th> Minima </th> 
+		<th> Massima </th> 
+	</tr>
+	<tr>
+		<td><b>Oggi</b></td> 
+		<td id="min_humidity_today"> ... </td> 
+		<td id="max_humidity_today"> ... </td> 
+	</tr>
+	<tr>
+		<td><b>Ieri</b></td> 
+		<td id="min_humidity_yesterday"> ... </td> 
+		<td id="max_humidity_yesterday"> ... </td> 
+	</tr>
+	<tr>
+		<td><b>Mese corrente</b></td> 
+		<td id="min_humidity_this_month"> ... </td> 
+		<td id="max_humidity_this_month"> ... </td> 
+	</tr>
+    <tr>
+		<td><b>Mese passato</b></td> 
+		<td id="min_humidity_last_month"> ... </td> 
+		<td id="max_humidity_last_month"> ... </td> 
+	</tr>
+</table>
+
+<h4>Andamento ultimi venti giorni</h4>
+<img src="plots/humidity_last_period.png" style="width:800px;">
+
+<h2>Pressione atmosferica</h2>
+<h4>Valori estremi</h4>
+<table>
+	<tr>
+		<th></th>
+		<th> Minima </th> 
+		<th> Massima </th> 
+	</tr>
+	<tr>
+		<td><b>Oggi</b></td> 
+		<td id="min_pressure_today"> ... </td> 
+		<td id="max_pressure_today"> ... </td> 
+	</tr>
+	<tr>
+		<td><b>Ieri</b></td> 
+		<td id="min_pressure_yesterday"> ... </td> 
+		<td id="max_pressure_yesterday"> ... </td> 
+	</tr>
+	<tr>
+		<td><b>Mese corrente</b></td> 
+		<td id="min_pressure_this_month"> ... </td> 
+		<td id="max_pressure_this_month"> ... </td> 
+	</tr>
+    <tr>
+		<td><b>Mese passato</b></td> 
+		<td id="min_pressure_last_month"> ... </td> 
+		<td id="max_pressure_last_month"> ... </td> 
+	</tr>
+</table>
+
+<h4>Andamento ultimi venti giorni</h4>
+<img src="plots/pressure_last_period.png" style="width:800px;">
+
+<h2>Tensione batteria</h2>
+<h4>Andamento ultimi venti giorni</h4>
+<img src="plots/battery_last_period.png" style="width:800px;">
+
+
+<h5>Ultimo aggiornamento stile 14-06-2024</h5>
+</body>
+</html>
