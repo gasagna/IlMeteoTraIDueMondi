@@ -32,7 +32,7 @@ setInterval(refreshLatest,  30000);
 // -------------------
 
 // Initialize the plot when the page loads
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
     // Initialize the plot
     initializePlot("plot");
 
