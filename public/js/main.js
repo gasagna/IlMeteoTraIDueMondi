@@ -36,34 +36,43 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize the plot
     initializePlot("plot");
 
-    // Fetch the temperature data for the past day and update the plot
-    fetchTimeSeries(selectedQuantity, selectedPeriod).then(data => {
-        updatePlot(data, selectedQuantity, selectedPeriod);
-    });
-
-    fetchExtrema(selectedQuantity).then(data => {
-        updateExtrema(data, selectedQuantity);
-    });
+    // Fetch data and update page
+    try {
+        // these are sequential, but the influxdb server is single-core, so i do not care
+        const timeseries = await fetchTimeSeries(selectedQuantity, selectedPeriod);
+        updatePlot(timeseries, selectedQuantity, selectedPeriod);
+        
+        const extrema = await fetchExtrema(selectedQuantity);
+        updateExtrema(extrema, selectedQuantity);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
 
     // You can add more event listeners for buttons or dropdowns to change the period dynamically
     for (let period of ['oneday', 'oneweek', 'onemonth']) {
-        document.getElementById(`button-${period}`).addEventListener('click', () => {
+        document.getElementById(`button-${period}`).addEventListener('click', async () => {
             selectedPeriod = `${period}`;
-            fetchTimeSeries(selectedQuantity, selectedPeriod).then(data => {
-                updatePlot(data, selectedQuantity, selectedPeriod);
-            });
-        });
+            try {
+                const timeseris = await fetchTimeSeries(selectedQuantity, selectedPeriod);
+                updatePlot(timeseries, selectedQuantity, selectedPeriod);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        })
     }
 
     for (let quantity of ['temperature', 'pressure', 'humidity', 'battery']) {
-        document.getElementById(`button-${quantity}`).addEventListener('click', () => {
+        document.getElementById(`button-${quantity}`).addEventListener('click', async () => {
             selectedQuantity = `${quantity}`;
-            fetchTimeSeries(selectedQuantity, selectedPeriod).then(data => {
-                updatePlot(data, selectedQuantity, selectedPeriod);
-            });
-            fetchExtrema(selectedQuantity).then(data => {
+            try {
+                const timeseries = await fetchTimeSeries(selectedQuantity, selectedPeriod);
+                updatePlot(timeseries, selectedQuantity, selectedPeriod);
+
+                const extrema = await fetchExtrema(selectedQuantity);
                 updateExtrema(data, selectedQuantity);
-            });
-        });
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        })
     }
 });
