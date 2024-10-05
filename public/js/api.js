@@ -99,9 +99,6 @@ export async function fetchTimeSeries(quantity, period) {
         // Make the fetch request to the API with the given parameters
         const response = await fetch(`/api/timeseries?quantity=${quantity}&period=${period}`);
 
-        console.log(period);
-        console.log(quantity);
-
         // Check if the response is not OK and throw an error
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}, Message: ${response.statusText}`);
