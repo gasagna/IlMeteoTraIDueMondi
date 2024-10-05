@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 updatePlot(timeseries, selectedQuantity, selectedPeriod);
 
                 const extrema = await fetchExtrema(selectedQuantity);
-                updateExtrema(data, selectedQuantity);
+                updateExtrema(extrema, selectedQuantity);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
