@@ -1,9 +1,7 @@
 // imports
-import {format, parseISO, setDefaultOptions, formatDistanceToNow} from 'https://cdn.jsdelivr.net/npm/date-fns/+esm';
-import {it} from 'https://cdn.jsdelivr.net/npm/date-fns/locale/+esm';
 
-// set locale to italian
-setDefaultOptions({ locale: it })
+
+
 
 // Date/time formatting functions
 function make_short_date(date) {

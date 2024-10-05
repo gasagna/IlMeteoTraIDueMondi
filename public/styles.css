@@ -1,0 +1,141 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+.container {
+    max-width: 1200px;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+.quantity-header {
+    font-size: 1.5rem;
+    color: #114a71;
+    text-align: center;
+    margin: 30px 0 10px;
+}
+.locations {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+th, td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    background-color: #8db0d3;
+    color: #114a71;
+}
+td {
+    background-color: #fff;
+}
+img {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+h4 {
+    text-align: center; /* Center all h4 headings */
+}
+hr {
+    border: none;
+    border-top: 2px solid #ccc;
+    margin: 10px 0;
+}
+#last-update {
+    font-size: 0.85em;
+    color: #7f8c8d;
+    text-align: center;
+}
+#plot {
+    width: 100%; /* Make the plot container span the entire page width */
+    display: flex;
+    justify-content: center;
+}
+svg {
+    width: 100%;  /* Make the SVG scale to the container */
+    height: auto; /* Let the height adjust automatically */
+}
+.tooltip {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  pointer-events: none;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.crosshair {
+  stroke: #797f83;
+  stroke-width: 1;
+  stroke-dasharray: 7, 3;
+}
+/* Gridline styling */
+.grid line {
+    stroke: lightgray;        /* Color of the grid lines */
+    stroke-width: 0.6;          /* Thickness of the grid lines */
+    stroke-opacity: 0.6;      /* Optional: Transparency of the lines */
+    shape-rendering: crispEdges; /* Ensures the lines are sharp */
+}
+.path {
+    stroke: rgb(255, 32, 32);        /* Color of the grid lines */
+    stroke-width: 1.5;          /* Thickness of the grid lines */
+    fill: none;                /* Ensure the path is not filled */
+    shape-rendering: crispEdges; /* Ensures the lines are sharp */
+}
+
+/* Style for the controls wrapper to align buttons on the same row */
+#controls-wrapper {
+    display: flex;
+    justify-content: space-between; /* Space between the left and right button groups */
+    align-items: center;            /* Vertically align buttons */
+    margin-bottom: 20px;            /* Space below the controls */
+    padding: 10px; /* Optional padding for the wrapper itself */
+}
+
+/* Add margin to the left of the period buttons */
+#period-controls {
+    margin-right: 30px;  /* Adjust the value as needed */
+}
+
+/* Add margin to the right of the quantity buttons */
+#quantity-controls {
+    margin-left: 30px; /* Adjust the value as needed */
+}
+
+/* Optional button styling for consistency */
+#period-controls button,
+#quantity-controls button {
+    padding: 8px 16px;  /* Adjust button padding for internal spacing */
+    font-size: 12px;
+    margin: 2px 6px; /* Add some spacing between buttons */
+    cursor: pointer;
+}
+
+/* Optional: Make buttons appear as equal width */
+#period-controls button,
+#quantity-controls button {
+    min-width: 40px;
+}
