@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         document.getElementById(`button-${period}`).addEventListener('click', async () => {
             selectedPeriod = `${period}`;
             try {
-                const timeseris = await fetchTimeSeries(selectedQuantity, selectedPeriod);
+                const timeseries = await fetchTimeSeries(selectedQuantity, selectedPeriod);
                 updatePlot(timeseries, selectedQuantity, selectedPeriod);
             } catch (error) {
                 console.error('Error fetching data:', error);
